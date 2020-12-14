@@ -1,13 +1,11 @@
 ﻿using System;
-using GameCycleSample.Config;
-using GameCycleSample.Struct;
-using GameCycleSample.Type;
+using SampleApp.Domain;
 using Unidux.SceneTransition;
 using Unidux;
 
 using UnityEngine;
 
-namespace GameCycleSample.Business
+namespace SampleApp.Application
 {
     public class SceneReducer : SceneDuck<Scene>.Reducer
     {

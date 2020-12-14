@@ -1,8 +1,8 @@
-﻿using GameCycleSample.Config;
+﻿using SampleApp.Domain;
 using Unidux.SceneTransition;
 using UnityEngine;
 
-namespace GameCycleSample.UI
+namespace SampleApp.Presentation
 {
     public class BaseSceneDispatcher : MonoBehaviour
     {

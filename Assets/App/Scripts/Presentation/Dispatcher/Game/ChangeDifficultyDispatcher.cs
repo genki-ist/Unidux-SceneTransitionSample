@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
-using GameCycleSample.Config;
-using GameCycleSample.Struct;
-using GameCycleSample.Type;
+using SampleApp.Domain;
 using Unidux.SceneTransition;
 using UniRx;
 using UnityEngine.UI;
 
-namespace GameCycleSample.UI
+namespace SampleApp.Presentation
 {
     [RequireComponent(typeof(Button))]
     public class ChangeDifficultyDispatcher : MonoBehaviour

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Unidux.SceneTransition;
 
-namespace GameCycleSample.Config
+namespace SampleApp.Domain
 {
     public class SceneConfig : ISceneConfig<Scene, Page>
     {

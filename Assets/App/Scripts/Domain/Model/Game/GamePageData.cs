@@ -1,8 +1,7 @@
 ﻿using System;
-using GameCycleSample.Type;
 using Unidux.SceneTransition;
 
-namespace GameCycleSample.Struct
+namespace SampleApp.Domain
 {
     [Serializable]
     public class GamePageData : IPageData

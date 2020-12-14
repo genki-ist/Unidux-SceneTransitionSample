@@ -1,9 +1,9 @@
-﻿using GameCycleSample.Config;
+﻿using SampleApp.Domain;
 using Unidux.SceneTransition;
-using Page = GameCycleSample.Config.Page;
-using Scene = GameCycleSample.Config.Scene;
+using Page = SampleApp.Domain.Page;
+using Scene = SampleApp.Domain.Scene;
 
-namespace GameCycleSample.Business
+namespace SampleApp.Application
 {
     public class PageReducer : PageDuck<Page, Scene>.Reducer
     {

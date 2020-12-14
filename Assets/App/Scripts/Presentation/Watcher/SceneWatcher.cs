@@ -1,9 +1,9 @@
-﻿using GameCycleSample.Config;
+﻿using SampleApp.Domain;
 using Unidux.SceneTransition;
 using UniRx;
 using UnityEngine;
 
-namespace GameCycleSample.UI
+namespace SampleApp.Presentation
 {
     public class SceneWatcher : MonoBehaviour
     {

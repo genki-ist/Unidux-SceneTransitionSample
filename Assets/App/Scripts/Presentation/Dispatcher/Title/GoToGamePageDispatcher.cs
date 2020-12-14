@@ -1,11 +1,10 @@
-using GameCycleSample.Config;
-using GameCycleSample.Struct;
+using SampleApp.Domain;
 using Unidux.SceneTransition;
 using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
 
-namespace GameCycleSample.UI
+namespace SampleApp.Presentation
 {
     public class GoToGamePageDispatcher : MonoBehaviour
     {

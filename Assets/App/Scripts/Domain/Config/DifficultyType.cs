@@ -1,4 +1,4 @@
-﻿namespace GameCycleSample.Type
+﻿namespace SampleApp.Domain
 {
     public enum DifficultyType
     {

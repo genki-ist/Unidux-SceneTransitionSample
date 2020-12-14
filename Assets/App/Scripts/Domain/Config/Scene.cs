@@ -1,4 +1,4 @@
-﻿namespace GameCycleSample.Config
+﻿namespace SampleApp.Domain
 {
     public enum Scene
     {

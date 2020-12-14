@@ -1,9 +1,9 @@
-﻿using GameCycleSample.Business;
+﻿using SampleApp.Application;
 using UniRx;
 using Unidux;
 using UnityEngine;
 
-namespace GameCycleSample.UI
+namespace SampleApp.Presentation
 {
     public sealed partial class Unidux : SingletonMonoBehaviour<Unidux>, IStoreAccessor
     {

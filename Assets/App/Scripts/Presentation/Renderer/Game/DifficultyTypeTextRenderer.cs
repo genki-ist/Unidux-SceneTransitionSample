@@ -1,10 +1,10 @@
-﻿using GameCycleSample.Business;
-using GameCycleSample.Struct;
+﻿using SampleApp.Application;
+using SampleApp.Domain;
 using TMPro;
 using UnityEngine;
 using UniRx;
 
-namespace GameCycleSample.UI
+namespace SampleApp.Presentation
 {
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class DifficultyTypeTextRenderer : MonoBehaviour

@@ -1,4 +1,4 @@
-﻿using GameCycleSample.Config;
+﻿using SampleApp.Domain;
 using Unidux.SceneTransition;
 using UnityEngine;
 using UniRx;
@@ -6,7 +6,7 @@ using UniRx.Triggers;
 using UnityEngine.UI;
 
 
-namespace GameCycleSample.UI
+namespace SampleApp.Presentation
 {
     [RequireComponent(typeof(Button))]
     public class ReturnToTitleButtonDispatcher : MonoBehaviour

@@ -1,9 +1,9 @@
 ﻿using System;
-using GameCycleSample.Config;
+using SampleApp.Domain;
 using Unidux;
 using Unidux.SceneTransition;
 
-namespace GameCycleSample.Business
+namespace SampleApp.Application
 {
     [Serializable]
     // public partial class State : StateBase

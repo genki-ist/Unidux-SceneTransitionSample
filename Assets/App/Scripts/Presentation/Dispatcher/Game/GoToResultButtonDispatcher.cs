@@ -1,5 +1,4 @@
-﻿using GameCycleSample.Config;
-using GameCycleSample.Struct;
+﻿using SampleApp.Domain;
 using Unidux.SceneTransition;
 using UnityEngine;
 using UniRx;
@@ -7,7 +6,7 @@ using UniRx.Triggers;
 using UnityEngine.UI;
 
 
-namespace GameCycleSample.UI
+namespace SampleApp.Presentation
 {
     [RequireComponent(typeof(Button))]
     public class GoToResultButtonDispatcher : MonoBehaviour
