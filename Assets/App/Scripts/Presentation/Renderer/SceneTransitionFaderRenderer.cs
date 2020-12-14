@@ -48,14 +48,14 @@ namespace SampleApp.Presentation
         //0->1
         public void FadeIn()
         {
-            Debug.Log("fade in");
+            // Debug.Log("fade in");
             StartCoroutine(FadeAnimation(0f, 1f));
         }
 
         //1->0
         public void FadeOut()
         {
-            Debug.Log("fade out");
+            // Debug.Log("fade out");
             StartCoroutine(FadeAnimation(1f, 0f));
         }
 

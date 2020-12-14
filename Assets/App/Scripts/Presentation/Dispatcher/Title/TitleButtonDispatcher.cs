@@ -11,20 +11,12 @@ namespace SampleApp.Presentation
     {
         public GamePageData GamePageData;
 
-        // public GoToGamePageDispatcher goToGamePageDispatcher;
-
         void Start()
         {
-            // this.GetComponent<Button>().OnClickAsObservable()
-            //     .Subscribe(_ => {
-            //         this.goToGamePageDispatcher.GoToGamePage(this.GamePageData);
-            //     })
-            //     .AddTo(this);
-
             this.GetComponent<Button>().OnClickAsObservable()
-                                        .Select(_ => PageDuck<Page, Scene>.ActionCreator.Push(Page.GamePage, this.GamePageData))
-                                        .Subscribe(action => Unidux.Dispatch(action))
-                                        .AddTo(this);
+                                       .Select(_ => PageDuck<Page, Scene>.ActionCreator.Push(Page.GamePage, this.GamePageData))
+                                       .Subscribe(action => Unidux.Dispatch(action))
+                                       .AddTo(this);
         }
     }
 }
