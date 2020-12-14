@@ -12,7 +12,7 @@ namespace SampleApp.Presentation
         private ISceneConfig<Scene, Page> config = new SceneConfig();
 
         [SerializeField]
-        private SceneTransitionFaderRenderer faderRenderer;
+        private SceneTransitionFaderRenderer faderRenderer = default;
 
         void Start()
         {
