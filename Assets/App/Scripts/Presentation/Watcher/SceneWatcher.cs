@@ -18,6 +18,8 @@ namespace SampleApp.Presentation
 
         void ChangeScenes(SceneState<Scene> state)
         {
+            // Debug.Log("UpdateScene");
+
             foreach (var scene in state.Additionals(SceneUtil.GetActiveScenes<Scene>()))
             {
                 StartCoroutine(SceneUtil.Add(scene.ToString()));

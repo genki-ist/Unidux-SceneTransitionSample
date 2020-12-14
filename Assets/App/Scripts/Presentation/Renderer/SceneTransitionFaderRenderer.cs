@@ -33,7 +33,7 @@ namespace SampleApp.Presentation
         }
 
         // Start is called before the first frame update
-        void Awake()
+        void Start()
         {
             this.fader = this.GetComponent<Image>();
 
@@ -42,29 +42,33 @@ namespace SampleApp.Presentation
             this.fadeAlpha = 1f;
             this.faderColor.a = this.fadeAlpha;
             this.faderColor = this.fader.color;
-            this.FadeOut();
+            // this.FadeOut();
         }
 
         //0->1
         public void FadeIn()
         {
+            Debug.Log("fade in");
             StartCoroutine(FadeAnimation(0f, 1f));
         }
 
         //1->0
         public void FadeOut()
         {
+            Debug.Log("fade out");
             StartCoroutine(FadeAnimation(1f, 0f));
         }
 
         // フェード
         private IEnumerator FadeAnimation(float startVal, float goalVal)
         {
+            this.canSceneTransition = false;
             float time = 0f;
 
             while (time <= this.intervalSecond)
             {
                 this.fadeAlpha = Mathf.Lerp(startVal, goalVal, time / this.intervalSecond);
+                // Debug.Log(this.fadeAlpha);
                 this.faderColor.a = this.fadeAlpha;
                 this.fader.color = this.faderColor;
                 time += Time.deltaTime;

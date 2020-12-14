@@ -6,9 +6,13 @@ namespace SampleApp.Presentation
 {
     public class BaseSceneDispatcher : MonoBehaviour
     {
-        void Start()
+        [SerializeField]
+        private SceneTransitionFaderRenderer faderRenderer;
+
+        void Awake()
         {
-            Unidux.Dispatch(PageDuck<Page, Scene>.ActionCreator.Reset());
+            // this.faderRenderer.FadeIn();
+            // Unidux.Dispatch(PageDuck<Page, Scene>.ActionCreator.Reset());
             Unidux.Dispatch(PageDuck<Page, Scene>.ActionCreator.Push(Page.TitlePage));
         }
     }
