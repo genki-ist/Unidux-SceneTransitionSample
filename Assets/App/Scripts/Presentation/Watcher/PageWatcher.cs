@@ -4,6 +4,7 @@ using Unidux.SceneTransition;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
+using System.Linq;
 
 namespace SampleApp.Presentation
 {
@@ -14,19 +15,23 @@ namespace SampleApp.Presentation
         [SerializeField]
         private SceneTransitionFaderRenderer faderRenderer = default;
 
+        private string currentPageName = "";
+
         void Start()
         {
             Unidux.Subject
-                .Where(state => state.Page.IsStateChanged)
+                .Where(state => state.Page.IsStateChanged && this.currentPageName != state.Page.Name)
                 .Subscribe(_ => this.faderRenderer.FadeIn())
                 .AddTo(this);
 
             this.UpdateAsObservable()
                 .Where(_ => this.faderRenderer.CanSceneTransition)
-                .Subscribe(state => 
+                .Subscribe(_ => 
                 {
                     this.UpdatePage(Unidux.State);
                     this.UpdateScenes(Unidux.State.Scene);
+                    Debug.Log(Unidux.State.Page.Name);
+                    this.currentPageName = Unidux.State.Page.Name;
                 })
                 .AddTo(this);
         }
