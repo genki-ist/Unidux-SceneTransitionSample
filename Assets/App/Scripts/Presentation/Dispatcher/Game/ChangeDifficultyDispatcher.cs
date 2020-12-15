@@ -9,16 +9,20 @@ namespace SampleApp.Presentation
     [RequireComponent(typeof(Button))]
     public class ChangeDifficultyDispatcher : MonoBehaviour
     {
+        private GamePageData gamePageData;
+
         // Start is called before the first frame update
         void Start()
         {
-            var type = DifficultyType.Easy;
-            var data = new GamePageData(type);
+            this.gamePageData = new GamePageData(DifficultyType.Easy);
 
-            this.GetComponent<Button>().OnClickAsObservable()
-                .Select(_ => PageDuck<Page, Scene>.ActionCreator.SetData(data))
-                .Subscribe(action => 
+            this.GetComponent<Button>()
+                .OnClickAsObservable()
+                .Subscribe(_ => 
                 {
+                    var type = Unidux.State.Page.GetData<GamePageData>().DifficultyType;
+                    // Debug.Log(type.ToString());
+
                     switch(type)
                     {
                         case DifficultyType.Easy:
@@ -31,10 +35,17 @@ namespace SampleApp.Presentation
                             type = DifficultyType.Easy;
                         break;
                     }
-                    data = new GamePageData(type);
-                    Unidux.Dispatch(action);
+                    this.gamePageData = new GamePageData(type);
+
+                    this.ChangeSceneData();
                 })
                 .AddTo(this);
+        }
+
+        private void ChangeSceneData()
+        {
+            var action = PageDuck<Page, Scene>.ActionCreator.SetData(this.gamePageData);
+            Unidux.Dispatch(action);
         }
     }
 }

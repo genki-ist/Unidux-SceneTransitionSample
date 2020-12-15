@@ -30,7 +30,7 @@ namespace SampleApp.Presentation
                 {
                     this.UpdatePage(Unidux.State);
                     this.UpdateScenes(Unidux.State.Scene);
-                    Debug.Log(Unidux.State.Page.Name);
+                    // Debug.Log(Unidux.State.Page.Name);
                     this.currentPageName = Unidux.State.Page.Name;
                 })
                 .AddTo(this);
