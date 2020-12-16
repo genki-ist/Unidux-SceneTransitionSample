@@ -9,18 +9,19 @@ namespace SampleApp.Presentation
     [RequireComponent(typeof(Button))]
     public class ChangeDifficultyDispatcher : MonoBehaviour
     {
-        private ContentsPageData gamePageData;
+        private ContentsPageData contentsPageData;
 
         // Start is called before the first frame update
         void Start()
         {
-            this.gamePageData = new ContentsPageData(DifficultyType.Easy);
+            var type = Unidux.State.Page.GetData<ContentsPageData>().DifficultyType;
+            this.contentsPageData = new ContentsPageData(type);
 
             this.GetComponent<Button>()
                 .OnClickAsObservable()
                 .Subscribe(_ => 
                 {
-                    var type = Unidux.State.Page.GetData<ContentsPageData>().DifficultyType;
+                    type = Unidux.State.Page.GetData<ContentsPageData>().DifficultyType;
                     // Debug.Log(type.ToString());
 
                     switch(type)
@@ -35,7 +36,7 @@ namespace SampleApp.Presentation
                             type = DifficultyType.Easy;
                         break;
                     }
-                    this.gamePageData = new ContentsPageData(type);
+                    this.contentsPageData = new ContentsPageData(type);
 
                     this.ChangeSceneData();
                 })
@@ -44,7 +45,7 @@ namespace SampleApp.Presentation
 
         private void ChangeSceneData()
         {
-            var action = PageDuck<PageName, SceneName>.ActionCreator.SetData(this.gamePageData);
+            var action = PageDuck<PageName, SceneName>.ActionCreator.SetData(this.contentsPageData);
             Unidux.Dispatch(action);
         }
     }

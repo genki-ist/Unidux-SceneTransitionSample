@@ -1079,7 +1079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contentsPageData:
-    DifficultyType: 0
+    DifficultyType: 1
 --- !u!114 &1978350889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1213,7 +1213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contentsPageData:
-    DifficultyType: 0
+    DifficultyType: 2
 --- !u!114 &2066203311
 MonoBehaviour:
   m_ObjectHideFlags: 0
