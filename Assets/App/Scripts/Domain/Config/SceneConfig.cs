@@ -14,10 +14,10 @@ namespace SampleApp.Domain
             {
                 return this._categoryMap = this._categoryMap ?? new Dictionary<SceneName, int>()
                 {
-                    {SceneName.SCENE_BASE, SceneCategory.Permanent},
-                    {SceneName.SCENE_TITLE, SceneCategory.Page},
-                    {SceneName.SCENE_CONTENTS, SceneCategory.Page},
-                    {SceneName.SCENE_RESULT, SceneCategory.Page},
+                    {SceneName.Base, SceneCategory.Permanent},
+                    {SceneName.Title, SceneCategory.Page},
+                    {SceneName.Contents, SceneCategory.Page},
+                    {SceneName.Result, SceneCategory.Page},
                 };
             }
         }
@@ -28,9 +28,9 @@ namespace SampleApp.Domain
             {
                 return this._pageMap = this._pageMap ?? new Dictionary<PageName, SceneName[]>()
                 {
-                    {PageName.PAGE_TITLE, new[] {SceneName.SCENE_TITLE}},
-                    {PageName.PAGE_CONTENTS, new[] {SceneName.SCENE_BASE}},
-                    {PageName.PAGE_RESULT, new[] {SceneName.SCENE_RESULT}},
+                    {PageName.PAGE_TITLE, new[] {SceneName.Title}},
+                    {PageName.PAGE_CONTENTS, new[] {SceneName.Contents}},
+                    {PageName.PAGE_RESULT, new[] {SceneName.Result}},
                 };
             }
         }

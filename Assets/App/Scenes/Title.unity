@@ -551,7 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867b289d0bd224100bc48a7e4fb63761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GamePageData:
+  contentsPageData:
     DifficultyType: 0
 --- !u!1 &722168259
 GameObject:
@@ -1002,7 +1002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1078,8 +1078,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867b289d0bd224100bc48a7e4fb63761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GamePageData:
-    DifficultyType: 1
+  contentsPageData:
+    DifficultyType: 0
 --- !u!114 &1978350889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1212,8 +1212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867b289d0bd224100bc48a7e4fb63761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GamePageData:
-    DifficultyType: 2
+  contentsPageData:
+    DifficultyType: 0
 --- !u!114 &2066203311
 MonoBehaviour:
   m_ObjectHideFlags: 0

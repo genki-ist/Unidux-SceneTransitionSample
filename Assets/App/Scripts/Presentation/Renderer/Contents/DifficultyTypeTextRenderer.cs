@@ -15,7 +15,7 @@ namespace SampleApp.Presentation
         {
             Unidux.Subject
                 .Where(state => state.Page.IsReady && state.Page.IsStateChanged)
-                .Where(state => state.Page.Data is GamePageData) // Page.Dataの型チェック
+                .Where(state => state.Page.Data is ContentsPageData) // Page.Dataの型チェック
                 .StartWith(Unidux.State)
                 .Subscribe(state => this.Render(state))
                 .AddTo(this);
@@ -23,7 +23,7 @@ namespace SampleApp.Presentation
 
         private void Render(State state)
         {
-            GamePageData pageData = state.Page.GetData<GamePageData>();
+            ContentsPageData pageData = state.Page.GetData<ContentsPageData>();
             this.DifficultyTypeText.text = pageData.DifficultyType.ToString();
         }
     }

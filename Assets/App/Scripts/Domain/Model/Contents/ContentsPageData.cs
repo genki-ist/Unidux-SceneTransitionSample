@@ -4,15 +4,15 @@ using Unidux.SceneTransition;
 namespace SampleApp.Domain
 {
     [Serializable]
-    public class GamePageData : IPageData
+    public class ContentsPageData : IPageData
     {
         public DifficultyType DifficultyType;
 
-        public GamePageData()
+        public ContentsPageData()
         {
         }
 
-        public GamePageData(DifficultyType difficultyType)
+        public ContentsPageData(DifficultyType difficultyType)
         {
             this.DifficultyType = difficultyType;
         }
