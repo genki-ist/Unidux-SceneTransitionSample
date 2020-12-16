@@ -8,8 +8,8 @@ namespace SampleApp.Presentation
     {
         void Awake()
         {
-            Unidux.Dispatch(PageDuck<Page, Scene>.ActionCreator.Reset());
-            Unidux.Dispatch(PageDuck<Page, Scene>.ActionCreator.Push(Page.TitlePage));
+            Unidux.Dispatch(PageDuck<PageName, SceneName>.ActionCreator.Reset());
+            Unidux.Dispatch(PageDuck<PageName, SceneName>.ActionCreator.Push(PageName.PAGE_TITLE));
         }
     }
 }

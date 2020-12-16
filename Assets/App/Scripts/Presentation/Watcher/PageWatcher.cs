@@ -10,11 +10,12 @@ namespace SampleApp.Presentation
 {
     public class PageWatcher : MonoBehaviour
     {
-        private ISceneConfig<Scene, Page> config = new SceneConfig();
-
         [SerializeField]
         private SceneTransitionFaderRenderer faderRenderer = default;
+        [SerializeField]
+        private SceneWatcher sceneWatcher = default;
 
+        private ISceneConfig<SceneName, PageName> config = new SceneConfig();
         private string currentPageName = "";
 
         void Start()
@@ -29,34 +30,21 @@ namespace SampleApp.Presentation
                 .Subscribe(_ => 
                 {
                     this.UpdatePage(Unidux.State);
-                    this.UpdateScenes(Unidux.State.Scene);
+                    this.sceneWatcher.UpdateScenes(Unidux.State.Scene);
                     // Debug.Log(Unidux.State.Page.Name);
                     this.currentPageName = Unidux.State.Page.Name;
                 })
                 .AddTo(this);
         }
 
-        void UpdatePage(State state)
+        private void UpdatePage(State state)
         {
             if (state.Scene.NeedsAdjust(config.GetPageScenes(), config.PageMap[state.Page.Current.Page]))
             {
-                Unidux.Dispatch(PageDuck<Page, Scene>.ActionCreator.Adjust());
+                Unidux.Dispatch(PageDuck<PageName, SceneName>.ActionCreator.Adjust());
             }
 
             this.faderRenderer.FadeOut();
-        }
-
-        void UpdateScenes(SceneState<Scene> state)
-        {
-            foreach (var scene in state.Additionals(SceneUtil.GetActiveScenes<Scene>()))
-            {
-                StartCoroutine(SceneUtil.Add(scene.ToString()));
-            }
-
-            foreach (var scene in state.Removals(SceneUtil.GetActiveScenes<Scene>()))
-            {
-                StartCoroutine(SceneUtil.Remove(scene.ToString()));
-            }
         }
     }
 }

@@ -44,7 +44,7 @@ namespace SampleApp.Presentation
 
         private void ChangeSceneData()
         {
-            var action = PageDuck<Page, Scene>.ActionCreator.SetData(this.gamePageData);
+            var action = PageDuck<PageName, SceneName>.ActionCreator.SetData(this.gamePageData);
             Unidux.Dispatch(action);
         }
     }

@@ -8,7 +8,7 @@ namespace SampleApp.Application
     [Serializable]
     public class State : StateBase
     {
-        public SceneState<Scene> Scene = new SceneState<Scene>();
-        public PageState<Page> Page = new PageState<Page>();
+        public SceneState<SceneName> Scene = new SceneState<SceneName>();
+        public PageState<PageName> Page = new PageState<PageName>();
     }
 }

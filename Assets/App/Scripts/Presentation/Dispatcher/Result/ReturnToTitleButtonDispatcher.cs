@@ -14,7 +14,7 @@ namespace SampleApp.Presentation
         void Start()
         {
             this.GetComponent<Button>().OnClickAsObservable()
-                .Select(_ => PageDuck<Page, Scene>.ActionCreator.Push(Page.TitlePage))
+                .Select(_ => PageDuck<PageName, SceneName>.ActionCreator.Push(PageName.PAGE_TITLE))
                 .Subscribe(action => Unidux.Dispatch(action))
                 .AddTo(this);
         }

@@ -1,11 +1,11 @@
 ﻿using SampleApp.Domain;
 using Unidux.SceneTransition;
-using Page = SampleApp.Domain.Page;
-using Scene = SampleApp.Domain.Scene;
+using PageName = SampleApp.Domain.PageName;
+using SceneName = SampleApp.Domain.SceneName;
 
 namespace SampleApp.Application
 {
-    public class PageReducer : PageDuck<Page, Scene>.Reducer
+    public class PageReducer : PageDuck<PageName, SceneName>.Reducer
     {
         public PageReducer() : base(new SceneConfig())
         {
@@ -15,7 +15,7 @@ namespace SampleApp.Application
         {
             // It's required for detecting page scene state location
             var _state = (State) state;
-            var _action = (PageDuck<Page, Scene>.IPageAction) action;
+            var _action = (PageDuck<PageName, SceneName>.IPageAction) action;
             _state.Page = base.Reduce(_state.Page, _state.Scene, _action);
             return state;
         }
