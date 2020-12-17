@@ -7,9 +7,9 @@ using UniRx;
 namespace SampleApp.Presentation
 {
     [RequireComponent(typeof(TextMeshProUGUI))]
-    public class DifficultyTypeTextRenderer : MonoBehaviour
+    public class ContentsTypeTextRenderer : MonoBehaviour
     {
-        public TextMeshProUGUI DifficultyTypeText;
+        public TextMeshProUGUI ContentsTypeText;
 
         void Start()
         {
@@ -24,7 +24,7 @@ namespace SampleApp.Presentation
         private void Render(State state)
         {
             ContentsPageData pageData = state.Page.GetData<ContentsPageData>();
-            this.DifficultyTypeText.text = pageData.DifficultyType.ToString();
+            this.ContentsTypeText.text = pageData.ContentsType.ToString();
         }
     }
 }

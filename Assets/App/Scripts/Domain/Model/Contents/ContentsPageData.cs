@@ -6,15 +6,15 @@ namespace SampleApp.Domain
     [Serializable]
     public class ContentsPageData : IPageData
     {
-        public DifficultyType DifficultyType;
+        public ContentsType ContentsType;
 
         public ContentsPageData()
         {
         }
 
-        public ContentsPageData(DifficultyType difficultyType)
+        public ContentsPageData(ContentsType ContentsType)
         {
-            this.DifficultyType = difficultyType;
+            this.ContentsType = ContentsType;
         }
     }
 }

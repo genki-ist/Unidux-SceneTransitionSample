@@ -1,9 +1,8 @@
 ﻿namespace SampleApp.Domain
 {
-    public enum DifficultyType
+    public enum ContentsType
     {
-        Easy,
-        Normal,
-        Hard,
+        Cube,
+        Capsule,
     }
 }
