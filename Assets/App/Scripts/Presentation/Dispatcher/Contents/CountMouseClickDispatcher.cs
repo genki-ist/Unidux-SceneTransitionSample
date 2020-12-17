@@ -3,6 +3,7 @@ using Unidux.SceneTransition;
 using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
+using UnityEngine.EventSystems;
 
 namespace SampleApp.Presentation
 {
@@ -15,6 +16,7 @@ namespace SampleApp.Presentation
         {
             this.UpdateAsObservable()
                 .Where(_ => Input.GetMouseButtonDown(0))
+                .Where(_ => !EventSystem.current.IsPointerOverGameObject())
                 .Subscribe(_ => 
                 {
                     var type = Unidux.State.Page.GetData<ContentsPageData>().ContentsType;

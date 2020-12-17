@@ -26,7 +26,7 @@ namespace SampleApp.Presentation
                 .Subscribe(_ => 
                 {
                     this.SetContentsPageData();
-                    this.ChangePageData();
+                    this.DispatchPageData();
                 })
                 .AddTo(this);
         }
@@ -75,7 +75,7 @@ namespace SampleApp.Presentation
             this.contentsPageData = new ContentsPageData(type, count);
         }
 
-        private void ChangePageData()
+        private void DispatchPageData()
         {
             var action = PageDuck<PageName, SceneName>.ActionCreator.SetData(this.contentsPageData);
             Unidux.Dispatch(action);

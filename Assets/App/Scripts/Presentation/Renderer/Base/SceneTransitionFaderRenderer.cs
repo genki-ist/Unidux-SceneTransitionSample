@@ -37,7 +37,7 @@ namespace SampleApp.Presentation
         {
             this.fader = this.GetComponent<Image>();
 
-            this.intervalSecond = 0.5f;
+            this.intervalSecond = 1f;
             this.canSceneTransition = false;
             this.fadeAlpha = 1f;
             this.faderColor.a = this.fadeAlpha;
