@@ -34,6 +34,7 @@ namespace SampleApp.Presentation
         private void InitContentsPageData()
         {
             var type = Unidux.State.Page.GetData<ContentsPageData>().ContentsType;
+            var count = Unidux.State.Page.GetData<ContentsPageData>().MouseClickCount;
 
             switch(type)
             {
@@ -49,12 +50,13 @@ namespace SampleApp.Presentation
                 break;
             }
 
-            this.contentsPageData = new ContentsPageData(type);
+            this.contentsPageData = new ContentsPageData(type, count);
         }
 
         private void SetContentsPageData()
         {
             var type = Unidux.State.Page.GetData<ContentsPageData>().ContentsType;
+            var count = Unidux.State.Page.GetData<ContentsPageData>().MouseClickCount;
 
             switch(type)
             {
@@ -70,7 +72,7 @@ namespace SampleApp.Presentation
                 break;
             }
 
-            this.contentsPageData = new ContentsPageData(type);
+            this.contentsPageData = new ContentsPageData(type, count);
         }
 
         private void ChangePageData()

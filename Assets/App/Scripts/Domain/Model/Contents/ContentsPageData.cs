@@ -8,13 +8,30 @@ namespace SampleApp.Domain
     {
         public ContentsType ContentsType;
 
-        public ContentsPageData()
+        public int MouseClickCount
         {
+            get => this.mouseClickCount;
+            set => this.mouseClickCount = value;
         }
 
-        public ContentsPageData(ContentsType ContentsType)
+        private int mouseClickCount;
+
+        public ContentsPageData()
+        {
+            this.mouseClickCount = 0;
+        }
+
+        public ContentsPageData(ContentsType ContentsType, int mouseClickCount)
         {
             this.ContentsType = ContentsType;
+            if(mouseClickCount > 0)
+            {
+                this.mouseClickCount = mouseClickCount;
+            }
+            else
+            {
+                this.mouseClickCount = 0;
+            }
         }
     }
 }
